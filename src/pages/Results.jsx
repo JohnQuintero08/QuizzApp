@@ -18,16 +18,21 @@ export default function Results(){
                     }
                 })
             })
-            console.log(score)
             return score
         })  
     },[])
+
+    function evaluateIsAnswered(question){
+        const isAnswered = question.arrayOfAnswers.find(ans => ans.isSelected === true)
+        return isAnswered ? true : false
+    }
 
     const printResults = location.state.allQuestions.map(question=>{
         return (
             <QuestionHolder 
                 value={question}
                 key={question.question.id}
+                isAnswered={evaluateIsAnswered(question)}
             >
                 {question.arrayOfAnswers.map(answer => {
                     return(
@@ -42,6 +47,7 @@ export default function Results(){
                     )
                 })}
             </QuestionHolder>
+            
         )
     })
 
@@ -51,7 +57,7 @@ export default function Results(){
             <p className='text-points'>You scored {points}/5 points</p>
             <Link 
                 className='button-restart'
-                to="/"
+                to="/game"
             >Play Again</Link>
         </div>
 

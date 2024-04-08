@@ -36,7 +36,8 @@ footer{
 
 .button-start-game,
 .button-check-answers,
-.button-restart{
+.button-restart,
+.button-save-settings{
     margin-top: 2rem;
     background-color: #4D5B9E;
     border: none;
@@ -44,6 +45,7 @@ footer{
     padding: 1rem 3rem;
     color: #F5F7FB;
     text-decoration: none;
+    cursor: pointer;
 }
 
 /* GAME PAGE */
@@ -87,4 +89,54 @@ footer{
 
 .text-points{
     margin: 10px auto;
+}
+
+/* SETTINGS PAGE */
+.page-settings{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+}
+.form-settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-settings select,
+.form-settings input[type='text'],
+fieldset{
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    border: 2px solid #4D5B9E;
+}
+
+.form-settings input[type='text']{
+    padding: 0.5rem;
+    width: 15rem;
+}
+
+.form-settings select{
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.7rem;
+}
+
+.form-settings label{
+    font-size: 1.1rem;
+}
+
+fieldset input{
+    margin-left: 0.3rem;
+}
+
+fieldset{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.form-settings input[type='checkbox']{
+    margin-right: 1rem;
 }

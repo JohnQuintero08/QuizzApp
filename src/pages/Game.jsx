@@ -37,7 +37,6 @@ export default function Game(){
                 })
                 return questionObject
             })      
-            
         }
         loadQuestions()
     },[])
@@ -47,6 +46,7 @@ export default function Game(){
             <QuestionHolder 
                 value={question}
                 key={question.id}
+                isAnswered={true}
             >
                 {question.arrayOfAnswers.map(answer => {
                     return(
