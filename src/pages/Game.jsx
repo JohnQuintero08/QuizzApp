@@ -5,16 +5,16 @@ import QuestionHolder from "../components/QuestionHolder";
 import Answer from "../components/Answer";
 import {Link} from "react-router-dom"
 
-export default function Game(){
+export default function Game(props){
     const [allQuestions, setAllQuestions] = React.useState([{
         question: '',
         correctAnswer: '',
         arrayOfAnswers: []
     }])
-
+    
     React.useEffect(()=>{
         async function loadQuestions(){
-            const data = await request()
+            const data = await request(props.setting)
             
             setAllQuestions(() => {
                 const questionObject = data.map((item)=> {
@@ -87,7 +87,7 @@ export default function Game(){
         <section className="container-game">
             {mainGame}
             <Link 
-                className="button-check-answers" 
+                className="button-link button-check-answers" 
                 to="/results"
                 state={{allQuestions}}
             >Check Answers

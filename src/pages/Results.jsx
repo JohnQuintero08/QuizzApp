@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import QuestionHolder from '../components/QuestionHolder'
 import Answer from '../components/Answer'
 
-export default function Results(){
+export default function Results(props){
     const [points, setPoints] = React.useState(0)
     const location = useLocation()   
     
@@ -54,9 +54,12 @@ export default function Results(){
     return (
         <div className='container-results'>
             {printResults}
-            <p className='text-points'>You scored {points}/5 points</p>
+            <p 
+            className='text-points'
+            >
+                {props.setting.fullName? props.setting.fullName : "Anonimous"}, your score is {points}/{props.setting.numberOfQuestions} points</p>
             <Link 
-                className='button-restart'
+                className='button-link button-restart'
                 to="/game"
             >Play Again</Link>
         </div>

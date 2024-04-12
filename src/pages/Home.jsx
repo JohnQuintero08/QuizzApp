@@ -6,7 +6,7 @@ export default function Home(){
         <section className="page-main">
             <h1>Quizzisimo</h1>
             <p>The best game to test your knowledge</p>
-            <Link className='button-start-game' to="game">Start game</Link>
+            <Link className='button-link button-start-game' to="game">Start game</Link>
         </section>
     )
 }

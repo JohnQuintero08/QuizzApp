@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Settings(){
+export default function Settings(props){
     const [gameParameters, setGameParameters] = React.useState({
         fullName: "",
-        difficulty: "Medium",
+        difficulty: "medium",
         numberOfQuestions: '5',
         isChecked: false,
     })
@@ -20,7 +20,7 @@ export default function Settings(){
 
     function handleSubmit(event){
         event.preventDefault()
-        console.log(gameParameters)
+        props.gamingProps(gameParameters)
     }
 
     return (
@@ -88,7 +88,7 @@ export default function Settings(){
                     />
                     <label htmlFor='isRobot'>Are you a robot?</label>
                 </div>
-                <button className='button-save-settings'> SAVE </button>
+                <button className='button-link button-save-settings'> SAVE </button>
             </form>
         </section>
     )

@@ -8,16 +8,24 @@ import Results from './pages/Results'
 import Settings from './pages/Settings'
 
 function App() {
-  
+  const [gameProps, setGameProps] = React.useState({
+    fullName: "",
+    difficulty: "Medium",
+    numberOfQuestions: '5',
+    isChecked: false,
+  })
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='game' element={<Game/>} />
-            <Route path='results' element={<Results/>} />
-            <Route path='settings' element={<Settings/>} />
+            <Route path='game' element={<Game setting={gameProps}/>} />
+            <Route path='results' element={<Results setting={gameProps}/>} />
+            <Route path='settings' element={<Settings gamingProps={(gameProperties)=> {
+              return setGameProps(gameProperties)
+            }}/>} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -5,11 +5,11 @@ import { IconContext } from "react-icons";
 
 export default function Header(){
     return (
-        <IconContext.Provider value={{size: '3rem', color: '#4D5B9E'}}>
+        <IconContext.Provider value={{className: "icon"}}>
             <header>
-                <NavLink to="/settings"><AiFillSetting/></NavLink>
+                <NavLink to="/settings"><AiFillSetting /></NavLink>
                 <AiFillAliwangwang />
-                <NavLink to="/"><AiFillHome/></NavLink>
+                <NavLink to="/"><AiFillHome /></NavLink>
             </header>
         </IconContext.Provider>
     )
